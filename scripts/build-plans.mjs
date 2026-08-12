@@ -105,7 +105,7 @@ const style = `<style>
 .tkg-plans .card.feat{border:2px solid #0074C1;box-shadow:0 18px 44px -18px rgba(0,116,193,.5)}
 .tkg-plans .badge{align-self:flex-start;background:#0074C1;color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
 .tkg-plans .card h3{font-family:"Merriweather",serif;font-size:1.5rem;color:#0b1f3a;margin:0 0 10px}
-.tkg-plans .price{font-size:2.5rem;font-weight:900;color:#0074C1;line-height:1;margin:6px 0 8px;letter-spacing:-.02em}
+.tkg-plans .price{font-size:1.75rem;font-weight:900;color:#0074C1;line-height:1;margin:6px 0 8px;letter-spacing:-.02em}
 .tkg-plans .price span{font-size:.95rem;font-weight:600;color:#6b7a90;letter-spacing:0}
 .tkg-plans .subt{font-family:"Merriweather",serif;font-weight:700;color:#0b1f3a;font-size:1.08rem;margin:2px 0}
 .tkg-plans .desc{color:#475569;font-size:.92rem;line-height:1.55;margin:6px 0 0}
