@@ -1,23 +1,24 @@
 <style>
 .tkg-plans{font-family:"Muli","Lato","Segoe UI",system-ui,sans-serif;color:#0f172a;background:#f5f8fc;padding:64px 20px}
 .tkg-plans *{box-sizing:border-box}
-.tkg-plans .head{max-width:840px;margin:0 auto 46px;text-align:center}
+.tkg-plans .head{max-width:840px;margin:0 auto 40px;text-align:center}
 .tkg-plans .head h1{font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.15;margin:0 0 18px}
 .tkg-plans .head p{color:#475569;font-size:1.06rem;line-height:1.65;margin:0}
 .tkg-plans .group{max-width:1200px;margin:0 auto}
-.tkg-plans .group-title{margin:52px 0 26px;font-family:"Merriweather",serif;color:#0b1f3a;font-size:1.5rem;text-align:center}
+.tkg-plans .group-title{margin:56px 0 10px;font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.4rem,3vw,1.9rem);text-align:center}
+.tkg-plans .group-desc{max-width:900px;margin:0 auto 28px;text-align:center;color:#475569;font-size:1rem;line-height:1.6;font-style:italic}
 .tkg-plans .cards{display:grid;gap:22px;align-items:stretch}
-.tkg-plans .cards.dev{grid-template-columns:repeat(4,1fr)}
+.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:repeat(4,1fr)}
 .tkg-plans .cards.maint{grid-template-columns:repeat(3,1fr)}
 .tkg-plans .card{background:#fff;border:1px solid #e7eef6;border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 10px 26px -18px rgba(11,31,58,.28);transition:.2s}
 .tkg-plans .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(11,31,58,.3)}
 .tkg-plans .card.feat{border:2px solid #2563eb;box-shadow:0 18px 44px -18px rgba(37,99,235,.5)}
 .tkg-plans .badge{align-self:flex-start;background:#2563eb;color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
-.tkg-plans .card h3{font-family:"Merriweather",serif;font-size:1.5rem;color:#0b1f3a;margin:0 0 14px}
-.tkg-plans .price{font-size:2.5rem;font-weight:900;color:#2563eb;line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+.tkg-plans .card h3{font-family:"Merriweather",serif;font-size:1.5rem;color:#0b1f3a;margin:0 0 10px}
+.tkg-plans .price{font-size:2.5rem;font-weight:900;color:#2563eb;line-height:1;margin:6px 0 8px;letter-spacing:-.02em}
 .tkg-plans .price span{font-size:.95rem;font-weight:600;color:#6b7a90;letter-spacing:0}
-.tkg-plans .subt{font-family:"Merriweather",serif;font-weight:700;color:#0b1f3a;font-size:1.08rem;margin:8px 0 8px}
-.tkg-plans .desc{color:#475569;font-size:.92rem;line-height:1.55;margin:0 0 6px}
+.tkg-plans .subt{font-family:"Merriweather",serif;font-weight:700;color:#0b1f3a;font-size:1.08rem;margin:2px 0}
+.tkg-plans .desc{color:#475569;font-size:.92rem;line-height:1.55;margin:6px 0 0}
 .tkg-plans hr{border:0;border-top:1px solid #e7eef6;margin:16px 0}
 .tkg-plans ul{list-style:none;padding:0;margin:6px 0 24px;flex:1}
 .tkg-plans li{position:relative;padding-left:27px;margin-bottom:13px;color:#334155;font-size:.93rem;line-height:1.5}
@@ -27,9 +28,9 @@
 .tkg-plans .btn:hover{background:#0d4f9e}
 .tkg-plans .card.feat .btn{background:#2563eb}
 .tkg-plans .card.feat .btn:hover{background:#1d4ed8}
-@media(max-width:1000px){.tkg-plans .cards.dev{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:820px){.tkg-plans .cards.maint{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
-@media(max-width:560px){.tkg-plans .cards.dev{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+@media(max-width:560px){.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 </style>
 <div class="tkg-plans">
   <div class="head">
@@ -37,48 +38,38 @@
     <p>Choose from flexible, pay-as-you-go monthly plans designed to provide your business with expert technical support and seamless system integration&mdash;all without long-term contracts or hidden fees. Scale your service level up or down as your operational needs evolve.</p>
   </div>
   <div class="group">
-    <h2 class="group-title">Development Plans</h2>
+    <h2 class="group-title">Monthly Subscription Plans</h2>
     <div class="cards dev"><div class="card">
-  <h3>Basic</h3>
-  <div class="price">$100<span>/month</span></div>
-  <ul><li><b>Ideal for:</b> Individuals or small teams starting with CRM.</li><li><b>Essential CRM Setup:</b> Basic configuration of Leads, Contacts, and Accounts.</li><li><b>Standard Field Mapping:</b> Organization of your data into Zoho modules.</li><li><b>Email Integration:</b> Track business emails inside the CRM.</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/Ep9rsvR" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
-  <h3>Standard</h3>
-  <div class="price">$300<span>/month</span></div>
-  <ul><li><b>Ideal for:</b> Growing businesses that need to save time.</li><li><b>Workflow Automation:</b> Automatic tasks and email alerts for your sales team.</li><li><b>Custom Pipeline:</b> Tailoring "Deals" stages to match your sales process.</li><li><b>Basic Reporting:</b> Monthly dashboards to track team performance.</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/2xzZzmOA" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card feat"><span class="badge">Most Popular</span>
-  <h3>Premium</h3>
-  <div class="price">$800<span>/month</span></div>
-  <ul><li><b>Ideal for:</b> Companies requiring advanced logic and insights.</li><li><b>Advanced Blueprints:</b> Step-by-step guided sales processes.</li><li><b>Third-Party Integrations:</b> Connecting WhatsApp, Mailchimp, or Slack.</li><li><b>Custom Dashboards:</b> High-level analytics for decision making.</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/E6hsoSP" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
-  <h3>Pro</h3>
-  <div class="price">$1000<span>/month</span></div>
-  <ul><li><b>Ideal for:</b> Businesses wanting a custom-coded ecosystem.</li><li><b>Deluge Scripting:</b> Advanced "low-code" automation for complex logic.</li><li><b>Finance Integration:</b> Connecting CRM with Zoho Books for invoicing.</li><li><b>Dedicated Support:</b> Priority troubleshooting and health checks.</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/MglCEU3X" target="_blank" rel="noopener noreferrer">Subscribe</a></div></div>
+  <h3>Basic</h3><div class="price">$100<span>/month</span></div>
+  <ul><li><b>Ideal for:</b> Individuals or small teams starting with CRM.</li><li><b>Essential CRM Setup:</b> Basic configuration of Leads, Contacts, and Accounts.</li><li><b>Standard Field Mapping:</b> Organization of your data into Zoho modules.</li><li><b>Email Integration:</b> Track business emails inside the CRM.</li></ul><a class="btn" href="https://rzp.io/rzp/Ep9rsvR" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
+  <h3>Standard</h3><div class="price">$300<span>/month</span></div>
+  <ul><li><b>Ideal for:</b> Growing businesses that need to save time.</li><li><b>Workflow Automation:</b> Automatic tasks and email alerts for your sales team.</li><li><b>Custom Pipeline:</b> Tailoring "Deals" stages to match your sales process.</li><li><b>Basic Reporting:</b> Monthly dashboards to track team performance.</li></ul><a class="btn" href="https://rzp.io/rzp/2xzZzmOA" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card feat"><span class="badge">Most Popular</span>
+  <h3>Premium</h3><div class="price">$800<span>/month</span></div>
+  <ul><li><b>Ideal for:</b> Companies requiring advanced logic and insights.</li><li><b>Advanced Blueprints:</b> Step-by-step guided sales processes.</li><li><b>Third-Party Integrations:</b> Connecting WhatsApp, Mailchimp, or Slack.</li><li><b>Custom Dashboards:</b> High-level analytics for decision making.</li></ul><a class="btn" href="https://rzp.io/rzp/E6hsoSP" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
+  <h3>Pro</h3><div class="price">$1000<span>/month</span></div>
+  <ul><li><b>Ideal for:</b> Businesses wanting a custom-coded ecosystem.</li><li><b>Deluge Scripting:</b> Advanced "low-code" automation for complex logic.</li><li><b>Finance Integration:</b> Connecting CRM with Zoho Books for invoicing.</li><li><b>Dedicated Support:</b> Priority troubleshooting and health checks.</li></ul><a class="btn" href="https://rzp.io/rzp/MglCEU3X" target="_blank" rel="noopener noreferrer">Subscribe</a></div></div>
+  </div>
+  <div class="group">
+    <h2 class="group-title">Tailored Zoho Ecosystem</h2>
+    <p class="group-desc">Stop struggling with manual data entry and disconnected apps. Our fixed-price &lsquo;Launch&rsquo; bundles are designed to get your Zoho ecosystem running at peak performance with zero guesswork&mdash;from initial setup to advanced Deluge scripting, we handle the technical heavy lifting so you can focus on growing your business.</p>
+    <div class="cards fixed"><div class="card">
+  <h3>Starter</h3><div class="subt">Foundation Setup</div><div class="price">$500</div><hr/>
+  <ul><li>Core Apps – 1 Zoho App</li><li>Automations – 5 Rules</li><li>Workflows – 5 Basic</li><li>Scripts – 2</li><li>Simple Migration – 1k Records</li><li>Templates 5 – Email/Inv</li></ul><a class="btn" href="https://rzp.io/rzp/ZkauJWjn" target="_blank" rel="noopener noreferrer">Get Started</a></div><div class="card">
+  <h3>Standard</h3><div class="subt">Professional Growth</div><div class="price">$1000</div><hr/>
+  <ul><li>Core Apps 1–2 Zoho Apps</li><li>Automations 10 Rules</li><li>Workflows 15 Basic</li><li>Scripts 8</li><li>Standard Migration 5k Records</li><li>Templates 10 Email/Inv</li></ul><a class="btn" href="https://rzp.io/rzp/UYi7CeI" target="_blank" rel="noopener noreferrer">Get Started</a></div><div class="card feat"><span class="badge">Best Value</span>
+  <h3>Advanced</h3><div class="subt">Business Optimization</div><div class="price">$2000</div><hr/>
+  <ul><li>Core Apps Up to 3 Apps</li><li>Automations 15 Rules</li><li>Workflows 20 Complex</li><li>Scripts 15</li><li>Complex Migration 10k Records</li><li>Templates 20 Email/Inv</li></ul><a class="btn" href="https://rzp.io/rzp/5SwWK8fP" target="_blank" rel="noopener noreferrer">Get Started</a></div><div class="card">
+  <h3>Enterprise</h3><div class="subt">Digital Transformation</div><div class="price">$3000</div><hr/>
+  <ul><li>Core Apps Full Zoho Suite</li><li>Automations 25+ Rules</li><li>Workflows 25+ Complex</li><li>Scripts Adv.</li><li>Logic Blueprints 3–5 Included</li><li>Migration 20k+ Records</li></ul><a class="btn" href="https://rzp.io/rzp/koa3a6c" target="_blank" rel="noopener noreferrer">Get Started</a></div></div>
   </div>
   <div class="group">
     <h2 class="group-title">Maintenance &amp; Support</h2>
     <div class="cards maint"><div class="card">
-  <h3>Basic</h3>
-  <div class="price">$200<span>/month</span></div>
-  <div class="subt">Essential Health</div>
-  <p class="desc">Keep your system stable and secure with expert troubleshooting and quarterly health checks.</p>
-  <hr/>
-  <ul><li><b>Tickets:</b> 5 per month</li><li><b>Response Time:</b> 48 Hours</li><li><b>User Admin:</b> Pass/Login Help</li><li><b>Health Check:</b> Quarterly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> Docs Only</li><li>Email Support Only</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/EYeaO4om" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card feat"><span class="badge">Recommended</span>
-  <h3>Pro</h3>
-  <div class="price">$500<span>/month</span></div>
-  <div class="subt">Advanced Maintenance</div>
-  <p class="desc">Priority support for active businesses requiring fast response times and role management.</p>
-  <hr/>
-  <ul><li><b>Tickets:</b> 15 per month</li><li><b>Response Time:</b> 24 Hours</li><li><b>User Admin:</b> Permissions/Roles</li><li><b>Health Check:</b> Monthly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> 1 Video Session/mo</li><li>Email & Zoho Cliq Support</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/ZkauJWjn" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
-  <h3>Elite</h3>
-  <div class="price">$800<span>/month</span></div>
-  <div class="subt">Full Managed Service</div>
-  <p class="desc">A dedicated technical partner. Instant access via Slack/WhatsApp and weekly audits.</p>
-  <hr/>
-  <ul><li><b>Tickets:</b> Unlimited</li><li><b>Response Time:</b> 4 Hours (Priority)</li><li><b>User Admin:</b> Full Security Audit</li><li><b>Health Check:</b> Weekly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> 3 Video Sessions/mo</li><li>Dedicated WhatsApp / Slack</li></ul>
-  <a class="btn" href="https://rzp.io/rzp/E6hsoSP" target="_blank" rel="noopener noreferrer">Subscribe</a></div></div>
+  <h3>Basic</h3><div class="price">$200<span>/month</span></div><div class="subt">Essential Health</div>
+  <p class="desc">Keep your system stable and secure with expert troubleshooting and quarterly health checks.</p><hr/><ul><li><b>Tickets:</b> 5 per month</li><li><b>Response Time:</b> 48 Hours</li><li><b>User Admin:</b> Pass/Login Help</li><li><b>Health Check:</b> Quarterly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> Docs Only</li><li>Email Support Only</li></ul><a class="btn" href="https://rzp.io/rzp/EYeaO4om" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card feat"><span class="badge">Recommended</span>
+  <h3>Pro</h3><div class="price">$500<span>/month</span></div><div class="subt">Advanced Maintenance</div>
+  <p class="desc">Priority support for active businesses requiring fast response times and role management.</p><hr/><ul><li><b>Tickets:</b> 15 per month</li><li><b>Response Time:</b> 24 Hours</li><li><b>User Admin:</b> Permissions/Roles</li><li><b>Health Check:</b> Monthly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> 1 Video Session/mo</li><li>Email & Zoho Cliq Support</li></ul><a class="btn" href="https://rzp.io/rzp/ZkauJWjn" target="_blank" rel="noopener noreferrer">Subscribe</a></div><div class="card">
+  <h3>Elite</h3><div class="price">$800<span>/month</span></div><div class="subt">Full Managed Service</div>
+  <p class="desc">A dedicated technical partner. Instant access via Slack/WhatsApp and weekly audits.</p><hr/><ul><li><b>Tickets:</b> Unlimited</li><li><b>Response Time:</b> 4 Hours (Priority)</li><li><b>User Admin:</b> Full Security Audit</li><li><b>Health Check:</b> Weekly</li><li><b>Bug Fixes:</b> Included</li><li><b>Training:</b> 3 Video Sessions/mo</li><li>Dedicated WhatsApp / Slack</li></ul><a class="btn" href="https://rzp.io/rzp/E6hsoSP" target="_blank" rel="noopener noreferrer">Subscribe</a></div></div>
   </div>
 </div>

@@ -1,9 +1,10 @@
 import fs from 'fs';
 
-// Generates the /plans page content (heading + description + pricing cards)
-// matching the approved design. Edit the data below to change plans/prices/links.
+// Generates the /plans page: three plan groups (monthly subscription, fixed-price
+// project bundles, maintenance & support). Edit the data below to change anything.
 const OUT = 'src/generated/plans.content.html';
 
+// 1) Monthly subscription (development) — Razorpay, "Subscribe"
 const dev = [
   { name: 'Basic', price: '$100', link: 'https://rzp.io/rzp/Ep9rsvR', feat: false, items: [
     ['Ideal for:', ' Individuals or small teams starting with CRM.'],
@@ -31,6 +32,23 @@ const dev = [
   ]},
 ];
 
+// 2) Fixed-price project bundles (Tailored Zoho Ecosystem) — existing links, "Get Started"
+const fixed = [
+  { name: 'Starter', sub: 'Foundation Setup', price: '$500', link: 'https://rzp.io/rzp/ZkauJWjn', feat: false, items: [
+    'Core Apps – 1 Zoho App', 'Automations – 5 Rules', 'Workflows – 5 Basic', 'Scripts – 2', 'Simple Migration – 1k Records', 'Templates 5 – Email/Inv',
+  ]},
+  { name: 'Standard', sub: 'Professional Growth', price: '$1000', link: 'https://rzp.io/rzp/UYi7CeI', feat: false, items: [
+    'Core Apps 1–2 Zoho Apps', 'Automations 10 Rules', 'Workflows 15 Basic', 'Scripts 8', 'Standard Migration 5k Records', 'Templates 10 Email/Inv',
+  ]},
+  { name: 'Advanced', sub: 'Business Optimization', price: '$2000', link: 'https://rzp.io/rzp/5SwWK8fP', feat: true, items: [
+    'Core Apps Up to 3 Apps', 'Automations 15 Rules', 'Workflows 20 Complex', 'Scripts 15', 'Complex Migration 10k Records', 'Templates 20 Email/Inv',
+  ]},
+  { name: 'Enterprise', sub: 'Digital Transformation', price: '$3000', link: 'https://rzp.io/rzp/koa3a6c', feat: false, items: [
+    'Core Apps Full Zoho Suite', 'Automations 25+ Rules', 'Workflows 25+ Complex', 'Scripts Adv.', 'Logic Blueprints 3–5 Included', 'Migration 20k+ Records',
+  ]},
+];
+
+// 3) Maintenance & support — Razorpay, "Subscribe"
 const maint = [
   { name: 'Basic', price: '$200', sub: 'Essential Health', link: 'https://rzp.io/rzp/EYeaO4om', feat: false,
     desc: 'Keep your system stable and secure with expert troubleshooting and quarterly health checks.', items: [
@@ -49,44 +67,44 @@ const maint = [
   ]},
 ];
 
-const li = ([b, t]) => `<li>${b ? `<b>${b}</b>` : ''}${t}</li>`;
-const btn = (link) => `<a class="btn" href="${link}" target="_blank" rel="noopener noreferrer">Subscribe</a>`;
+const liKV = ([b, t]) => `<li>${b ? `<b>${b}</b>` : ''}${t}</li>`;
+const liPlain = (t) => `<li>${t}</li>`;
+const btn = (link, label) => `<a class="btn" href="${link}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+const badge = (p, text) => p.feat ? `<span class="badge">${text}</span>` : '';
 
-const devCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${p.feat ? '<span class="badge">Most Popular</span>' : ''}
-  <h3>${p.name}</h3>
-  <div class="price">${p.price}<span>/month</span></div>
-  <ul>${p.items.map(li).join('')}</ul>
-  ${btn(p.link)}</div>`;
+const devCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${badge(p, 'Most Popular')}
+  <h3>${p.name}</h3><div class="price">${p.price}<span>/month</span></div>
+  <ul>${p.items.map(liKV).join('')}</ul>${btn(p.link, 'Subscribe')}</div>`;
 
-const maintCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${p.feat ? '<span class="badge">Recommended</span>' : ''}
-  <h3>${p.name}</h3>
-  <div class="price">${p.price}<span>/month</span></div>
-  <div class="subt">${p.sub}</div>
-  <p class="desc">${p.desc}</p>
-  <hr/>
-  <ul>${p.items.map(li).join('')}</ul>
-  ${btn(p.link)}</div>`;
+const fixedCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${badge(p, 'Best Value')}
+  <h3>${p.name}</h3><div class="subt">${p.sub}</div><div class="price">${p.price}</div><hr/>
+  <ul>${p.items.map(liPlain).join('')}</ul>${btn(p.link, 'Get Started')}</div>`;
+
+const maintCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${badge(p, 'Recommended')}
+  <h3>${p.name}</h3><div class="price">${p.price}<span>/month</span></div><div class="subt">${p.sub}</div>
+  <p class="desc">${p.desc}</p><hr/><ul>${p.items.map(liKV).join('')}</ul>${btn(p.link, 'Subscribe')}</div>`;
 
 const style = `<style>
 .tkg-plans{font-family:"Muli","Lato","Segoe UI",system-ui,sans-serif;color:#0f172a;background:#f5f8fc;padding:64px 20px}
 .tkg-plans *{box-sizing:border-box}
-.tkg-plans .head{max-width:840px;margin:0 auto 46px;text-align:center}
+.tkg-plans .head{max-width:840px;margin:0 auto 40px;text-align:center}
 .tkg-plans .head h1{font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.15;margin:0 0 18px}
 .tkg-plans .head p{color:#475569;font-size:1.06rem;line-height:1.65;margin:0}
 .tkg-plans .group{max-width:1200px;margin:0 auto}
-.tkg-plans .group-title{margin:52px 0 26px;font-family:"Merriweather",serif;color:#0b1f3a;font-size:1.5rem;text-align:center}
+.tkg-plans .group-title{margin:56px 0 10px;font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.4rem,3vw,1.9rem);text-align:center}
+.tkg-plans .group-desc{max-width:900px;margin:0 auto 28px;text-align:center;color:#475569;font-size:1rem;line-height:1.6;font-style:italic}
 .tkg-plans .cards{display:grid;gap:22px;align-items:stretch}
-.tkg-plans .cards.dev{grid-template-columns:repeat(4,1fr)}
+.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:repeat(4,1fr)}
 .tkg-plans .cards.maint{grid-template-columns:repeat(3,1fr)}
 .tkg-plans .card{background:#fff;border:1px solid #e7eef6;border-radius:16px;padding:30px 26px;display:flex;flex-direction:column;box-shadow:0 10px 26px -18px rgba(11,31,58,.28);transition:.2s}
 .tkg-plans .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(11,31,58,.3)}
 .tkg-plans .card.feat{border:2px solid #2563eb;box-shadow:0 18px 44px -18px rgba(37,99,235,.5)}
 .tkg-plans .badge{align-self:flex-start;background:#2563eb;color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
-.tkg-plans .card h3{font-family:"Merriweather",serif;font-size:1.5rem;color:#0b1f3a;margin:0 0 14px}
-.tkg-plans .price{font-size:2.5rem;font-weight:900;color:#2563eb;line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+.tkg-plans .card h3{font-family:"Merriweather",serif;font-size:1.5rem;color:#0b1f3a;margin:0 0 10px}
+.tkg-plans .price{font-size:2.5rem;font-weight:900;color:#2563eb;line-height:1;margin:6px 0 8px;letter-spacing:-.02em}
 .tkg-plans .price span{font-size:.95rem;font-weight:600;color:#6b7a90;letter-spacing:0}
-.tkg-plans .subt{font-family:"Merriweather",serif;font-weight:700;color:#0b1f3a;font-size:1.08rem;margin:8px 0 8px}
-.tkg-plans .desc{color:#475569;font-size:.92rem;line-height:1.55;margin:0 0 6px}
+.tkg-plans .subt{font-family:"Merriweather",serif;font-weight:700;color:#0b1f3a;font-size:1.08rem;margin:2px 0}
+.tkg-plans .desc{color:#475569;font-size:.92rem;line-height:1.55;margin:6px 0 0}
 .tkg-plans hr{border:0;border-top:1px solid #e7eef6;margin:16px 0}
 .tkg-plans ul{list-style:none;padding:0;margin:6px 0 24px;flex:1}
 .tkg-plans li{position:relative;padding-left:27px;margin-bottom:13px;color:#334155;font-size:.93rem;line-height:1.5}
@@ -96,9 +114,9 @@ const style = `<style>
 .tkg-plans .btn:hover{background:#0d4f9e}
 .tkg-plans .card.feat .btn{background:#2563eb}
 .tkg-plans .card.feat .btn:hover{background:#1d4ed8}
-@media(max-width:1000px){.tkg-plans .cards.dev{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:820px){.tkg-plans .cards.maint{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
-@media(max-width:560px){.tkg-plans .cards.dev{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+@media(max-width:560px){.tkg-plans .cards.dev,.tkg-plans .cards.fixed{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 </style>`;
 
 const html = `${style}
@@ -108,8 +126,13 @@ const html = `${style}
     <p>Choose from flexible, pay-as-you-go monthly plans designed to provide your business with expert technical support and seamless system integration&mdash;all without long-term contracts or hidden fees. Scale your service level up or down as your operational needs evolve.</p>
   </div>
   <div class="group">
-    <h2 class="group-title">Development Plans</h2>
+    <h2 class="group-title">Monthly Subscription Plans</h2>
     <div class="cards dev">${dev.map(devCard).join('')}</div>
+  </div>
+  <div class="group">
+    <h2 class="group-title">Tailored Zoho Ecosystem</h2>
+    <p class="group-desc">Stop struggling with manual data entry and disconnected apps. Our fixed-price &lsquo;Launch&rsquo; bundles are designed to get your Zoho ecosystem running at peak performance with zero guesswork&mdash;from initial setup to advanced Deluge scripting, we handle the technical heavy lifting so you can focus on growing your business.</p>
+    <div class="cards fixed">${fixed.map(fixedCard).join('')}</div>
   </div>
   <div class="group">
     <h2 class="group-title">Maintenance &amp; Support</h2>
@@ -118,4 +141,4 @@ const html = `${style}
 </div>`;
 
 fs.writeFileSync(OUT, html, 'utf8');
-console.log('Wrote ' + OUT + ' (' + (html.length/1024).toFixed(1) + ' KB), ' + (dev.length+maint.length) + ' plans.');
+console.log('Wrote ' + OUT + ' (' + (html.length/1024).toFixed(1) + ' KB), ' + (dev.length+fixed.length+maint.length) + ' plans across 3 groups.');
