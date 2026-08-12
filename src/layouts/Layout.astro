@@ -1,0 +1,25 @@
+---
+// Master page layout. Assembles: per-page <head>, shared Header, page content,
+// shared Footer, and the theme's trailing backdrop markup.
+//
+// headHtml / contentHtml are raw HTML strings imported per page (?raw).
+// Astro's set:html writes them straight into the static build output, so the
+// <script>/<style>/<link> tags they contain become real tags that run normally.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import afterFooter from '../generated/afterfooter.html?raw';
+
+const { headHtml, contentHtml, bodyAttrs = {} } = Astro.props;
+---
+<html lang="en-US" dir="ltr" data-nojs>
+  <head>
+    <Fragment set:html={headHtml} />
+  </head>
+  <body {...bodyAttrs}>
+    <a href="#thememaincontent" class="theme-skip-to-needed-content">Skip to main content</a>
+    <Header />
+    <Fragment set:html={contentHtml} />
+    <Footer />
+    <Fragment set:html={afterFooter} />
+  </body>
+</html>

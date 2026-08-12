@@ -1,0 +1,104 @@
+/* MOBILE VIEW (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  /* CUSTOM HEADER */
+  .custom-header {
+    display: flex;
+    flex-direction: row; /* Horizontal alignment */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Distribute space between items */
+    text-align: left;
+    padding: 15px;
+    position: relative; /* Ensure burger menu stays within header */
+    width: 100%; /* Ensure full width */
+    min-height: 100px; /* Increased height to accommodate subtitle */
+    background-color: #fff; /* Optional: Add background for visibility */
+  }
+
+  /* LOGO AND COMPANY NAME CONTAINER */
+  .theme-logo-name {
+    display: flex;
+    flex-direction: row; /* Align logo and name horizontally */
+    align-items: flex-start; /* Align to the top */
+  }
+
+  .theme-logo-parent img {
+    max-width: 80px !important; /* Reduce width */
+    max-height: 80px !important; /* Reduce height proportionally */
+    width: auto !important;
+    height: auto !important;
+    margin-right: 10px; /* Space between logo and name */
+  }
+
+  /* NAME AND SUBTITLE CONTAINER */
+  .theme-name-subtitle {
+    display: flex;
+    flex-direction: column; /* Stack name and subtitle vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .theme-site-name {
+    font-size: 20px !important; /* Smaller font size */
+    white-space: nowrap; /* Prevent line break */
+    margin: 0; /* Remove default margins */
+    margin-bottom: 5px; /* Space between name and subtitle */
+  }
+
+  .theme-site-caption {
+    font-size: 14px !important;
+    white-space: nowrap; /* Prevent line break */
+    margin: 0; /* Remove default margins */
+  }
+
+  /* BURGER MENU */
+  .theme-responsive-menu-area {
+    flex: 0 0 auto; /* Prevent burger from stretching */
+    margin-left: 10px; /* Space between name and burger */
+    z-index: 999; /* Ensure visibility */
+  }
+
+  .sites-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .sites-hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #333; /* Adjust color as needed */
+    transition: all 0.3s ease;
+  }
+}
+
+/* DESKTOP VIEW (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+  /* Restore original sizes or adjust as needed */
+  .theme-logo-parent img {
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  .theme-site-name {
+    font-size: 48px !important;
+  }
+
+  .theme-site-caption {
+    font-size: 20px !important;
+    display: block; /* Show tagline on desktop */
+  }
+
+  .custom-header {
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+  .theme-logo-name {
+    flex-direction: row; /* Maintain horizontal alignment */
+    align-items: center;
+  }
+  .theme-name-subtitle {
+    flex-direction: row; /* Restore to row if needed for desktop */
+    align-items: center;
+  }
+}

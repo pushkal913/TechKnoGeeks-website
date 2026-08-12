@@ -1,0 +1,22 @@
+# Netlify deployment config for the TechKnoGeeks Astro site.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirect the stale duplicate homepage to the real one.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+# Serve extensionless clean URLs (e.g. /about-us -> /about-us.html).
+# Netlify does this automatically for "file" build output, but keep pretty URLs tidy.
+[[redirects]]
+  from = "/index"
+  to = "/"
+  status = 301
+  force = true

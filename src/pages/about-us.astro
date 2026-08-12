@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import headHtml from '../generated/about-us.head.html?raw';
+import contentHtml from '../generated/about-us.content.html?raw';
+const bodyAttrs = {"data-zs-home":"true","data-zs-subsite":"","data-zs-display-mode":"default"};
+---
+<Layout headHtml={headHtml} contentHtml={contentHtml} bodyAttrs={bodyAttrs} />
