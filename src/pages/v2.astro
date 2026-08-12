@@ -1,0 +1,314 @@
+---
+// Redesigned homepage PROPOSAL — self-contained, modern, performance-first.
+// Lives at /v2 so it can be compared against the current homepage before adopting.
+// Uses the already self-hosted fonts (/fonts/fonts.css) and optimized images.
+const booking = "https://techknogeeks.zohobookings.in/433051000000032055";
+const services = [
+  { t: "Zoho CRM & Database", d: "Design, customize and automate CRM plus custom databases that fit how your team actually works.", href: "/crm-database",
+    icon: `<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/>` },
+  { t: "Web & App Development", d: "Zoho Creator and custom web apps — internal tools, portals and integrations built to scale.", href: "/web-app-development",
+    icon: `<path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/><path d="m13.5 6-3 12"/>` },
+  { t: "Sales, Marketing & Leads", d: "A growth engine across Zoho Marketing, campaigns and lead automation that compounds pipeline.", href: "/growth-engine-sales-marketing-lead-mastery",
+    icon: `<path d="M3 3v18h18"/><path d="m7 15 3-4 3 2 5-7"/>` },
+  { t: "Telephony & AI Solutions", d: "Twilio and RingCentral voice, plus AI workflows wired straight into your Zoho stack.", href: "/telephony-ai-solutions",
+    icon: `<path d="M15.5 4h.5a3 3 0 0 1 3 3v.5"/><path d="M15.5 8H16a3 3 0 0 1 3 3"/><path d="M5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>` },
+  { t: "Data & Analytics", d: "Zoho Analytics and Power BI dashboards that turn scattered data into decisions.", href: "/data-driven-decisions-seamless-integrations",
+    icon: `<path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/>` },
+  { t: "Accounting & Recruitment", d: "Zoho Books automation and hiring workflows that keep finance and people ops running clean.", href: "/accounting-recruitment",
+    icon: `<path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/>` },
+];
+const stats = [
+  { n: "200+", l: "Projects delivered" },
+  { n: "$500K+", l: "Client value created" },
+  { n: "300+", l: "Automations built" },
+  { n: "50+", l: "Happy businesses" },
+  { n: "20+", l: "Zoho apps mastered" },
+];
+const steps = [
+  { n: "01", t: "Discover & Define", d: "We start by understanding your vision, workflows and the challenges slowing you down." },
+  { n: "02", t: "Design & Develop", d: "Our experts craft a tailored Zoho solution mapped precisely to your goals." },
+  { n: "03", t: "Implement & Integrate", d: "We bring it live with seamless implementation across your existing tools." },
+  { n: "04", t: "Test, Deliver & Support", d: "Rigorous testing, a smooth handover, and ongoing support that has your back." },
+];
+const logos = ["Zoho.png","twilio-logo.webp","power-bi-icon.webp","Airtable.webp","Zapier logo.png","MySQL.svg","WordPress.png"];
+---
+<html lang="en-US" dir="ltr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TechKnoGeeks | Your All-in-One Zoho Solutions Partner</title>
+<meta name="description" content="TechKnoGeeks helps businesses integrate, automate and scale with the complete Zoho Suite — CRM, Books, Creator, Analytics, Twilio, RingCentral & Power BI."/>
+<link rel="icon" href="/favicon.png"/>
+<link rel="preload" as="image" href="/images/Hospitality-consultants.jpg" fetchpriority="high"/>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/mulibold_font_latin.woff2" crossorigin/>
+<link rel="stylesheet" href="/fonts/fonts.css"/>
+<style is:global>
+  :root{
+    --navy:#0b1f3a; --navy2:#12294d; --blue:#2563eb; --blue-d:#1d4ed8;
+    --cyan:#06b6d4; --ink:#0f172a; --slate:#516079; --muted:#6b7a90;
+    --bg:#ffffff; --soft:#f5f8fc; --line:#e7eef6; --white:#fff;
+    --sans:"Muli","Lato","Segoe UI",system-ui,sans-serif;
+    --radius:16px; --shadow:0 10px 30px -12px rgba(11,31,58,.18);
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:800;font-size:1rem;padding:.85em 1.5em;border-radius:999px;transition:.18s;cursor:pointer;border:2px solid transparent;line-height:1}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 22px -8px rgba(37,99,235,.6)}
+  .btn-primary:hover{background:var(--blue-d);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{background:var(--navy2);transform:translateY(-2px)}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5em;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--blue)}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:800}
+  section{padding:84px 0}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:1.15rem}
+  .brand img{height:40px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-weight:700;color:var(--slate);font-size:.95rem}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;transition:.2s}
+
+  /* HERO */
+  .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+  .hero-bg{position:absolute;inset:0;background:url(/images/Hospitality-consultants.jpg) center/cover;opacity:.22}
+  .hero-grad{position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,31,58,.96) 0%,rgba(18,41,77,.82) 45%,rgba(37,99,235,.55) 100%)}
+  .hero-in{position:relative;padding:96px 0 104px;max-width:820px}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,4rem);margin:.35em 0 .5em}
+  .hero h1 span{color:#7cc0ff}
+  .hero p.lead{font-size:clamp(1.05rem,2.1vw,1.3rem);color:#d7e2f2;max-width:620px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:40px;color:#aab9d0;font-size:.9rem;font-weight:600}
+  .hero-trust b{color:#fff}
+  .hero-trust .dot{display:inline-flex;align-items:center;gap:8px}
+  .hero-trust svg{width:18px;height:18px;stroke:#7cc0ff}
+
+  /* LOGO STRIP */
+  .logos{padding:34px 0;border-bottom:1px solid var(--line);background:var(--soft)}
+  .logos p{text-align:center;color:var(--muted);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+  .logo-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:38px}
+  .logo-row img{height:30px;width:auto;opacity:.72;filter:grayscale(1);transition:.2s}
+  .logo-row img:hover{opacity:1;filter:none}
+
+  /* SECTION HEADER */
+  .sec-head{max-width:660px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:.4em 0 .3em;color:var(--navy)}
+  .sec-head p{color:var(--slate);font-size:1.08rem}
+
+  /* SERVICES */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.2s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#cfe0f5}
+  .card .ic{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e8f0ff,#dbeafe);margin-bottom:18px}
+  .card .ic svg{width:26px;height:26px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.2rem;color:var(--navy);margin-bottom:8px}
+  .card p{color:var(--slate);font-size:.97rem}
+  .card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--blue);font-weight:800;font-size:.9rem}
+  .card:hover .more{gap:10px}
+
+  /* STATS */
+  .stats{background:var(--navy);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center}
+  .stat .n{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:900;color:#7cc0ff;letter-spacing:-.03em}
+  .stat .l{color:#b7c4da;font-weight:600;font-size:.92rem;margin-top:4px}
+
+  /* PROCESS */
+  .process{background:var(--soft)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative}
+  .step .num{font-size:2.4rem;font-weight:900;color:#dbe7f7;line-height:1}
+  .step h3{font-size:1.12rem;color:var(--navy);margin:12px 0 8px}
+  .step p{color:var(--slate);font-size:.95rem}
+
+  /* QUOTE */
+  .quote{background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;text-align:center}
+  .quote .wrap{max-width:820px}
+  .quote p{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.35}
+  .quote .who{margin-top:22px;color:#dbe4ff;font-weight:700}
+
+  /* CTA BAND */
+  .cta{background:var(--navy);color:#fff;text-align:center;border-radius:26px;padding:64px 26px;margin:0 22px}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.7rem);max-width:640px;margin:0 auto .5em}
+  .cta p{color:#c3d0e6;max-width:520px;margin:0 auto 30px;font-size:1.08rem}
+
+  /* FOOTER */
+  footer.ft{background:#08182e;color:#9fb0c9;padding:56px 0 30px}
+  .ft-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .ft-brand{max-width:320px}
+  .ft-brand .brand{color:#fff;margin-bottom:12px}
+  .ft-col h4{color:#fff;font-size:.95rem;margin-bottom:14px}
+  .ft-col a{display:block;color:#9fb0c9;padding:5px 0;font-size:.92rem}
+  .ft-col a:hover{color:#7cc0ff}
+  .ft-bot{padding-top:22px;text-align:center;font-size:.85rem;color:#6f83a0}
+
+  @media (max-width:920px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:30px 20px}
+  }
+  @media (max-width:720px){
+    section{padding:60px 0}
+    .nav-links,.nav-cta .btn{display:none}
+    .burger{display:block}
+    .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 22px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    .hero-in{padding:70px 0 78px}
+    .grid{grid-template-columns:1fr}
+    .cta{margin:0 14px;padding:48px 22px}
+  }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/v2"><img src="/no background logo -1-.png" alt="TechKnoGeeks"/> TechKnoGeeks</a>
+      <nav class="nav-links" id="menu">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="/plans">Plans</a>
+        <a href="/about-us">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href={booking} target="_blank" rel="noopener">Book a call</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0">
+    <div class="hero-bg"></div><div class="hero-grad"></div>
+    <div class="wrap hero-in">
+      <span class="eyebrow" style="color:#7cc0ff">◆ Certified Zoho Solutions Partner</span>
+      <h1>Your all-in-one <span>Zoho</span> solutions partner.</h1>
+      <p class="lead">We help businesses integrate, automate and scale with the complete Zoho Suite — CRM, Books, Creator, Analytics and cross-platform integrations that actually move the needle.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href={booking} target="_blank" rel="noopener">Book a free consultation →</a>
+        <a class="btn btn-ghost" href="/plans">Explore plans</a>
+      </div>
+      <div class="hero-trust">
+        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m20 6-11 11-5-5"/></svg> <b>20+</b>&nbsp;Zoho apps mastered</span>
+        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m20 6-11 11-5-5"/></svg> <b>200+</b>&nbsp;projects delivered</span>
+        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m20 6-11 11-5-5"/></svg> End-to-end implementation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO STRIP -->
+  <div class="logos">
+    <div class="wrap">
+      <p>Zoho suite &amp; the tools we integrate</p>
+      <div class="logo-row">
+        {logos.map(l => <img src={`/${l}`} alt="" loading="lazy" height="30"/>)}
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What we do</span>
+        <h2>Zoho-based solutions for every part of your business</h2>
+        <p>From CRM to analytics to telephony — one partner to design, build and run your entire Zoho stack.</p>
+      </div>
+      <div class="grid">
+        {services.map(s => (
+          <a class="card" href={s.href}>
+            <div class="ic"><svg viewBox="0 0 24 24" set:html={s.icon}></svg></div>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap">
+      {stats.map(s => (
+        <div class="stat"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Our proven 4-step process</h2>
+        <p>A clear, low-risk path from first conversation to a solution your team loves.</p>
+      </div>
+      <div class="steps">
+        {steps.map(s => (
+          <div class="step"><div class="num">{s.n}</div><h3>{s.t}</h3><p>{s.d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <div class="wrap">
+      <p>“TechKnoGeeks turned our tangled spreadsheets into a single Zoho system our whole team runs on. Faster, clearer, and finally scalable.”</p>
+      <div class="who">— A growing business we helped scale</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:70px 0">
+    <div class="cta">
+      <h2>Ready to make Zoho work the way your business does?</h2>
+      <p>Book a free, no-pressure consultation. We'll map your goals to the right Zoho solution — no jargon, just a clear plan.</p>
+      <a class="btn btn-primary" href={booking} target="_blank" rel="noopener" style="font-size:1.05rem;padding:1em 1.8em">Book your free consultation →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft-top">
+        <div class="ft-brand">
+          <div class="brand"><img src="/no background logo -1-.png" alt="" style="height:40px"/> TechKnoGeeks</div>
+          <p>Get it done with gear &amp; geeks. Your certified partner for the complete Zoho ecosystem.</p>
+        </div>
+        <div class="ft-col">
+          <h4>Services</h4>
+          <a href="/crm-database">CRM &amp; Database</a>
+          <a href="/web-app-development">Web &amp; App Development</a>
+          <a href="/telephony-ai-solutions">Telephony &amp; AI</a>
+          <a href="/data-driven-decisions-seamless-integrations">Data &amp; Analytics</a>
+        </div>
+        <div class="ft-col">
+          <h4>Company</h4>
+          <a href="/about-us">About us</a>
+          <a href="/plans">Plans</a>
+          <a href="/contact">Contact</a>
+          <a href={booking} target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+      <div class="ft-bot">© 2026 TechKnoGeeks — Get it Done With Gear &amp; Geeks.</div>
+    </div>
+  </footer>
+
+  <script>
+    const b = document.getElementById('burger');
+    const m = document.getElementById('menu');
+    b && b.addEventListener('click', () => m.classList.toggle('open'));
+  </script>
+</body>
+</html>

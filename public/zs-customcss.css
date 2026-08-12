@@ -102,3 +102,13 @@
     align-items: center;
   }
 }
+/* ===== Custom overrides (TechKnoGeeks) ===== */
+/* Mobile header: compact logo + title lockup (removes empty gap after logo) */
+@media (max-width: 767px){
+  .theme-branding-info{flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;gap:11px!important}
+  .theme-logo-parent{width:auto!important;margin:0!important;flex:0 0 auto!important}
+  .theme-logo-parent img{max-height:54px!important;max-width:54px!important;height:auto!important;width:auto!important}
+  .theme-site-name-caption{margin:0!important;padding:0!important;text-align:left!important}
+  .theme-site-name{font-size:19px!important;line-height:1.15!important;margin:0!important}
+  .theme-site-caption{font-size:11px!important;line-height:1.25!important;margin:0!important}
+}
