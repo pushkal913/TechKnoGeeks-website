@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/inline-critical.mjs dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "devDependencies": {
-    "astro": "^4.16.18"
+    "astro": "^4.16.18",
+    "beasties": "^0.4.3"
   }
 }
