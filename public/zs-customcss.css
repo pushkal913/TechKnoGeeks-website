@@ -135,3 +135,8 @@
   [data-element-id="elm_2iFZIW_2PiVY6TpW8AiEWg"]{grid-column:2!important;grid-row:2!important;margin:0!important}
   [data-element-id="elm_2iFZIW_2PiVY6TpW8AiEWg"] p{text-align:left!important;margin:0!important;line-height:1.2!important}
 }
+
+/* Footer contact numbers: ~10% larger on desktop */
+@media (min-width: 768px){
+  [data-element-id="elm__PkjUcmtHr_uRhrflB1HFQ"] p,[data-element-id="elm__PkjUcmtHr_uRhrflB1HFQ"] span{font-size:14.5px!important}
+}
