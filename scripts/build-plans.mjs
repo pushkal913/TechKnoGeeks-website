@@ -85,11 +85,15 @@ const maintCard = (p) => `<div class="card${p.feat ? ' feat' : ''}">${badge(p, '
   <p class="desc">${p.desc}</p><hr/><ul>${p.items.map(liKV).join('')}</ul>${btn(p.link, 'Subscribe')}</div>`;
 
 const style = `<style>
-.tkg-plans{font-family:"Muli","Lato","Segoe UI",system-ui,sans-serif;color:#0f172a;background:#f5f8fc;padding:64px 20px}
+.tkg-banner{position:relative;color:#fff;text-align:center;padding:78px 20px;overflow:hidden;background:#0b1f3a}
+.tkg-banner .bg{position:absolute;inset:0;background:url(/images/user-or-customer-choosing-subscription-plan-option-monthly-product-package-for-online-service.jpg) center/cover;opacity:.3}
+.tkg-banner .ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(11,31,58,.92),rgba(37,99,235,.7))}
+.tkg-banner .inner{position:relative;max-width:860px;margin:0 auto}
+.tkg-banner h1{font-family:"Merriweather",serif;font-size:clamp(2.3rem,5.6vw,3.6rem);margin:0 0 18px;letter-spacing:-.01em}
+.tkg-banner p{font-size:1.05rem;line-height:1.65;color:#dbe4f2;margin:0}
+.tkg-plans{font-family:"Muli","Lato","Segoe UI",system-ui,sans-serif;color:#0f172a;background:#f5f8fc;padding:24px 20px 68px}
 .tkg-plans *{box-sizing:border-box}
-.tkg-plans .head{max-width:840px;margin:0 auto 40px;text-align:center}
-.tkg-plans .head h1{font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.15;margin:0 0 18px}
-.tkg-plans .head p{color:#475569;font-size:1.06rem;line-height:1.65;margin:0}
+.tkg-plans .group:first-child .group-title{margin-top:34px}
 .tkg-plans .group{max-width:1200px;margin:0 auto}
 .tkg-plans .group-title{margin:56px 0 10px;font-family:"Merriweather",serif;color:#0b1f3a;font-size:clamp(1.4rem,3vw,1.9rem);text-align:center}
 .tkg-plans .group-desc{max-width:900px;margin:0 auto 28px;text-align:center;color:#475569;font-size:1rem;line-height:1.6;font-style:italic}
@@ -120,13 +124,17 @@ const style = `<style>
 </style>`;
 
 const html = `${style}
-<div class="tkg-plans">
-  <div class="head">
-    <h1>Flexible Monthly Plans Built to Scale</h1>
-    <p>Choose from flexible, pay-as-you-go monthly plans designed to provide your business with expert technical support and seamless system integration&mdash;all without long-term contracts or hidden fees. Scale your service level up or down as your operational needs evolve.</p>
+<div class="tkg-banner">
+  <div class="bg"></div><div class="ov"></div>
+  <div class="inner">
+    <h1>Plans</h1>
+    <p>Partner with TechKnoGeeks to unlock the full potential of your Zoho ecosystem. We offer tiered development plans that grow with your business, providing everything from initial environment setup to advanced, custom-coded applications and deep-dive analytics.</p>
   </div>
+</div>
+<div class="tkg-plans">
   <div class="group">
-    <h2 class="group-title">Monthly Subscription Plans</h2>
+    <h2 class="group-title">Flexible Monthly Plans Built to Scale</h2>
+    <p class="group-desc">Choose from flexible, pay-as-you-go monthly plans designed to provide your business with expert technical support and seamless system integration&mdash;all without long-term contracts or hidden fees. Scale your service level up or down as your operational needs evolve.</p>
     <div class="cards dev">${dev.map(devCard).join('')}</div>
   </div>
   <div class="group">
@@ -136,6 +144,7 @@ const html = `${style}
   </div>
   <div class="group">
     <h2 class="group-title">Maintenance &amp; Support</h2>
+    <p class="group-desc">Proactive support for a high-performing business. Our maintenance and support packages offer guaranteed response times, regular system audits, and dedicated training to ensure your team stays productive. Whether you need basic troubleshooting or full managed security, we provide the expert care required to keep your Zoho apps running at peak efficiency.</p>
     <div class="cards maint">${maint.map(maintCard).join('')}</div>
   </div>
 </div>`;
