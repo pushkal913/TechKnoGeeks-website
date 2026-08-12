@@ -1,0 +1,28 @@
+# Netlify headers — caching + basic hardening.
+# Fonts never change once published → cache hard for a year.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images/media rarely change; cache a month.
+/images/*
+  Cache-Control: public, max-age=2592000
+/files/*
+  Cache-Control: public, max-age=2592000
+
+# Theme CSS/JS: cache a week (safe to update on redeploy).
+/css/*
+  Cache-Control: public, max-age=604800
+/js/*
+  Cache-Control: public, max-age=604800
+/template/*
+  Cache-Control: public, max-age=604800
+
+# Portal stub returns JSON.
+/portaluser/*
+  Content-Type: application/json
+
+# Security headers for all pages.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
