@@ -140,3 +140,6 @@
 @media (min-width: 768px){
   [data-element-id="elm__PkjUcmtHr_uRhrflB1HFQ"] p,[data-element-id="elm__PkjUcmtHr_uRhrflB1HFQ"] span{font-size:14.5px!important}
 }
+
+/* Wider header container site-wide (reduce outer whitespace, spread logo/menu) */
+.theme-header .zpcontainer{max-inline-size:1680px!important;max-width:1680px!important}
