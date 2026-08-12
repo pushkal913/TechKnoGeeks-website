@@ -1,1 +1,4 @@
-User-agent: * 
+User-agent: *
+Allow: /
+
+Sitemap: https://www.techknogeeks.com/sitemap.xml
