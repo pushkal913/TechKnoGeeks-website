@@ -146,3 +146,13 @@
 
 /* Show the 'Our Expertise at a Glance' carousel section on mobile/tablet too */
 [data-element-id="elm_on9O4bWtywiN7KmVyTAcSg"]{display:block!important}
+
+/* Mobile: uniform carousel logo sizing in 'Our Expertise at a Glance' */
+@media (max-width: 767px){
+  [data-element-id="elm_on9O4bWtywiN7KmVyTAcSg"] .zpimage-container img,
+  [data-element-id="elm_on9O4bWtywiN7KmVyTAcSg"] figure img,
+  [data-element-id="elm_on9O4bWtywiN7KmVyTAcSg"] img.zpimage{
+    max-height:60px!important;max-width:70%!important;width:auto!important;height:auto!important;
+    object-fit:contain!important;margin-left:auto!important;margin-right:auto!important;display:block!important;
+  }
+}
