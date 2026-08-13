@@ -66,7 +66,7 @@ const JS = `<script>(function(){
   function go(p){page=((p%pages)+pages)%pages;move(false);}
   function build(){dots.innerHTML='';for(var i=0;i<pages;i++){(function(i){var b=document.createElement('button');b.className='tkg-dot'+(i===page?' active':'');b.setAttribute('aria-label','Go to slide '+(i+1));b.onclick=function(){go(i);reset();};dots.appendChild(b);})(i);}}
   function layout(){per=pv();cards.forEach(function(c){c.style.flexBasis=(100/per)+'%';c.style.maxWidth=(100/per)+'%';});pages=Math.ceil(total/per);if(page>pages-1)page=pages-1;build();move(true);}
-  function start(){stop();timer=setInterval(function(){go(page+1);},4200);}function stop(){if(timer)clearInterval(timer);}function reset(){start();}
+  function start(){stop();timer=setInterval(function(){go(page+1);},2000);}function stop(){if(timer)clearInterval(timer);}function reset(){start();}
   prev.onclick=function(){go(page-1);reset();};next.onclick=function(){go(page+1);reset();};
   root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
   var x0=null,vp=root.querySelector('.tkg-vp');
