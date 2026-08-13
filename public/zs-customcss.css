@@ -143,3 +143,6 @@
 
 /* Wider header container site-wide (reduce outer whitespace, spread logo/menu) */
 .theme-header .zpcontainer{max-inline-size:1680px!important;max-width:1680px!important}
+
+/* Show the 'Our Expertise at a Glance' carousel section on mobile/tablet too */
+[data-element-id="elm_on9O4bWtywiN7KmVyTAcSg"]{display:block!important}
