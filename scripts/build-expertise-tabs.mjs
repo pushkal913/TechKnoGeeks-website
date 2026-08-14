@@ -36,7 +36,8 @@ const STYLE = `<style>
 .tkg-chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand);flex:0 0 auto}
 .tkg-chip:hover{border-color:var(--brand);box-shadow:0 8px 18px -10px rgba(0,116,193,.5);transform:translateY(-2px)}
 @media(max-width:680px){
-  .tkg-tabs{padding:0 14px;margin-bottom:40px}
+  .tkg-tabs{padding:0 14px;margin-top:42px;margin-bottom:40px}
+  .tkg-tabs h3{font-size:1.62rem}
   .tkg-tablist{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .tkg-tablist::-webkit-scrollbar{display:none}
   .tkg-tab{font-size:.86rem;padding:9px 15px}
