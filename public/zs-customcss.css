@@ -154,6 +154,18 @@
 [data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"]{position:relative}
 [data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"]::after{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:3;
-  background:linear-gradient(to bottom,#ffffff 0%,rgba(255,255,255,0) 14%,rgba(255,255,255,0) 86%,#ffffff 100%);
+  background:linear-gradient(to bottom,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.5) 2%,
+    rgba(255,255,255,0.22) 4%,
+    rgba(255,255,255,0.08) 6.5%,
+    rgba(255,255,255,0.02) 9%,
+    rgba(255,255,255,0) 12%,
+    rgba(255,255,255,0) 88%,
+    rgba(255,255,255,0.02) 91%,
+    rgba(255,255,255,0.08) 93.5%,
+    rgba(255,255,255,0.22) 96%,
+    rgba(255,255,255,0.5) 98%,
+    rgba(255,255,255,0.92) 100%);
 }
 [data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"] .zphero-slider-container{position:relative;z-index:4}
