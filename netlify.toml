@@ -8,6 +8,12 @@
 
 # Redirect the stale duplicate homepage to the real one.
 [[redirects]]
+  from = "/classes"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/home"
   to = "/"
   status = 301

@@ -1,0 +1,21 @@
+# TechKnoGeeks
+
+TechKnoGeeks is a certified Zoho implementation and automation partner. We help businesses integrate, automate, and scale with the complete Zoho ecosystem — CRM, Books, Creator, and Analytics — plus cross-platform integrations such as Twilio, RingCentral, Power BI, MySQL, MongoDB, and Zapier. From initial setup to advanced Deluge scripting and custom-coded web apps, we handle the technical work so teams run their business on one connected system instead of scattered, disconnected tools.
+
+## Core pages
+- [Services](https://www.techknogeeks.com/services): End-to-end Zoho implementation, automation, and integration services.
+- [Plans & Pricing](https://www.techknogeeks.com/plans): Monthly subscription, fixed-price project, and maintenance plans with transparent pricing and no lock-in.
+- [About](https://www.techknogeeks.com/about-us): Who we are and how we work with clients.
+- [Contact](https://www.techknogeeks.com/contact): Book a free consultation or reach the team.
+
+## What we do
+- [Zoho CRM & Custom Database](https://www.techknogeeks.com/crm-database): CRM setup, custom databases, clean data, and automation.
+- [Web & App Development](https://www.techknogeeks.com/web-app-development): Zoho Creator apps and custom web portals wired to your backend.
+- [Telephony & AI Solutions](https://www.techknogeeks.com/telephony-ai-solutions): Twilio/RingCentral voice and AI chatbots inside Zoho.
+- [Data & Analytics](https://www.techknogeeks.com/data-driven-decisions-seamless-integrations): Zoho Analytics and Power BI dashboards plus integrations.
+- [Accounting & Recruitment](https://www.techknogeeks.com/accounting-recruitment): Zoho Books accounting automation and recruitment workflows.
+- [Sales, Marketing & Leads](https://www.techknogeeks.com/growth-engine-sales-marketing-lead-mastery): Campaigns, marketing automation, and lead generation.
+
+## Contact
+- Website: https://www.techknogeeks.com
+- Email: official@techknogeeks.com
