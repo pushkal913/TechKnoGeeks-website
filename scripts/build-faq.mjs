@@ -25,7 +25,7 @@ const PAGES = {
     service: { name: 'Zoho CRM and Database Solutions', serviceType: 'Zoho CRM consulting, implementation, migration and automation',
       description: 'Zoho CRM setup, customization, custom modules, data migration and workflow automation, together with custom database solutions built around your business process.',
       audience: 'Businesses implementing or improving Zoho CRM', areaServed: 'Worldwide' },
-    faqs: byId(['F005', 'F006', 'F007', 'F008', 'F009', 'F012', 'F013', 'F022', 'F023']),
+    faqs: byId(['F005', 'F006', 'F007', 'F008', 'F009', 'F012', 'F013', 'F015', 'F022', 'F023', 'F028', 'F010', 'F011']),
   },
   'data-driven-decisions-seamless-integrations': {
     url: SITE + '/data-driven-decisions-seamless-integrations', webName: 'Zoho Analytics & Data Integration',
@@ -49,7 +49,7 @@ const PAGES = {
     service: { name: 'Zoho Telephony and AI Automation', serviceType: 'Zoho telephony, Twilio/RingCentral and AI integrations',
       description: 'Twilio and RingCentral telephony connected to Zoho, plus AI chatbots and AI-assisted workflows implemented with appropriate permissions and review.',
       audience: 'Businesses adding telephony and AI to Zoho', areaServed: 'Worldwide' },
-    faqs: byId(['F038', 'F039']),
+    faqs: byId(['F038', 'F039', 'F040']),
   },
   index: {
     url: SITE + '/', homepage: true, webName: 'TechKnoGeeks — Zoho Integrations & Automation',

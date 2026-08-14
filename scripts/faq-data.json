@@ -66,7 +66,7 @@
   "page": "P02",
   "prio": "P1",
   "q": "Do you provide user training and documentation after implementation?",
-  "a": "Training and documentation should be included where users or administrators need help adopting the new system. Depending on scope, this can include role-based training, administrator guidance, process notes, field and module definitions, automation documentation, integration notes and recorded sessions. The required handover materials should be listed explicitly in the project scope.",
+  "a": "Yes. Basic user onboarding and documentation are typically included so your team can adopt the new system, and clear handover materials are listed in the project scope. Depending on scope these can include role-based training, administrator guidance, process notes, field and module definitions, automation documentation, integration notes and recorded sessions. More extensive or ongoing team training is scoped and priced separately based on the volume of users and the time involved.",
   "gate": "Confirm exact deliverables per offering"
  },
  "F011": {
