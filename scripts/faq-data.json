@@ -1,0 +1,282 @@
+{
+ "F001": {
+  "page": "P01",
+  "prio": "P0",
+  "q": "What Zoho services does TechKnoGeeks provide?",
+  "a": "TechKnoGeeks provides Zoho consulting, implementation, customization, migration, automation, integration, analytics, custom application, accounting, telephony and AI-related services. The team works across products such as Zoho CRM, Zoho One, Creator, Analytics, Books, Inventory, Desk, Campaigns and Flow, together with external platforms and APIs. The final solution should be based on the business process rather than a fixed software bundle.",
+  "gate": "Approved"
+ },
+ "F002": {
+  "page": "P01",
+  "prio": "P1",
+  "q": "Does TechKnoGeeks work with international and remote clients?",
+  "a": "Yes. TechKnoGeeks presents projects and client examples across multiple countries and can deliver discovery, implementation, testing, training and support remotely. Exact availability, working-hour overlap, onsite requirements and country-specific constraints should be confirmed during project scoping.",
+  "gate": "Confirm current service-area wording"
+ },
+ "F003": {
+  "page": "P01",
+  "prio": "P0",
+  "q": "What information do you need to scope a Zoho project?",
+  "a": "A useful project brief includes the business processes involved, number and types of users, current applications, required Zoho products, data to migrate, integrations, reports, automations, permissions, training needs and target timeline. If these details are not yet documented, discovery can be used to map the requirements before preparing a detailed scope and estimate.",
+  "gate": "Approved"
+ },
+ "F004": {
+  "page": "P01",
+  "prio": "P1",
+  "q": "Do you provide support after a Zoho project goes live?",
+  "a": "Post-launch support can include troubleshooting, user assistance, workflow changes, automation improvements, integration monitoring, reporting updates, audits and further enhancements. The appropriate support model depends on the number of applications, business criticality, integration complexity and how frequently the system changes.",
+  "gate": "Confirm support packages before publishing"
+ },
+ "F005": {
+  "page": "P02",
+  "prio": "P0",
+  "q": "Do I need a Zoho consultant for my business?",
+  "a": "A Zoho consultant is most useful when you need more than a basic account setup. Professional help can reduce risk when the project involves process design, customization, automation, integrations, migration, reporting, permissions, training or multiple Zoho applications. Simple requirements may be handled internally, while complex or business-critical implementations benefit from structured discovery, testing and documentation.",
+  "gate": "Approved"
+ },
+ "F006": {
+  "page": "P02",
+  "prio": "P0",
+  "q": "What does a Zoho consultant actually do?",
+  "a": "A Zoho consultant translates business processes into a practical Zoho solution. Work can include discovery, architecture, CRM configuration, custom modules, workflows, Deluge functions, integrations, migration, testing, user acceptance, training, documentation and ongoing support. The exact responsibilities should be defined in the project scope and deliverables.",
+  "gate": "Approved"
+ },
+ "F007": {
+  "page": "P02",
+  "prio": "P0",
+  "q": "How much does Zoho CRM implementation cost?",
+  "a": "Implementation cost depends on users, applications, process complexity, data migration, customization, integrations, reporting, testing, training and support. A straightforward CRM configuration is very different from a multi-app Zoho One implementation with custom development. Requirements should be scoped before quoting so the estimate reflects the actual work rather than a generic package.",
+  "gate": "Approved"
+ },
+ "F008": {
+  "page": "P02",
+  "prio": "P0",
+  "q": "How long does Zoho CRM implementation take?",
+  "a": "The timeline depends on scope, data readiness, integrations, customization and stakeholder availability. A responsible plan normally includes discovery, solution design, configuration or development, migration, testing, user acceptance, training and go-live support. Complex implementations should be divided into phases rather than launched as one large change.",
+  "gate": "Approved"
+ },
+ "F009": {
+  "page": "P02",
+  "prio": "P0",
+  "q": "Can Zoho CRM be customized to match my business process?",
+  "a": "Yes. Zoho CRM can be configured with custom modules and fields, layouts, validation, workflows, approvals, custom functions, Deluge, APIs and integrations. The process should be designed first, then each requirement should be matched to standard configuration or custom development. This avoids unnecessary complexity and makes the system easier to maintain.",
+  "gate": "Approved"
+ },
+ "F010": {
+  "page": "P02",
+  "prio": "P1",
+  "q": "Do you provide user training and documentation after implementation?",
+  "a": "Training and documentation should be included where users or administrators need help adopting the new system. Depending on scope, this can include role-based training, administrator guidance, process notes, field and module definitions, automation documentation, integration notes and recorded sessions. The required handover materials should be listed explicitly in the project scope.",
+  "gate": "Confirm exact deliverables per offering"
+ },
+ "F011": {
+  "page": "P02",
+  "prio": "P1",
+  "q": "Will we receive ownership and documentation for our Zoho configuration and custom code?",
+  "a": "Ownership, access and handover terms should be agreed before work begins. A complete handover can include administrator access, configuration notes, Deluge functions, API or integration documentation, field mappings, credentials-transfer procedures and known limitations. Any third-party licenses, reusable components or continuing support dependencies should also be identified in the agreement.",
+  "gate": "Owner confirmation required"
+ },
+ "F012": {
+  "page": "P03",
+  "prio": "P0",
+  "q": "Can I migrate from Salesforce, HubSpot, Pipedrive or another CRM to Zoho?",
+  "a": "Yes. A CRM migration can include auditing the source system, cleaning data, mapping fields and relationships, deciding which history to retain, running a test migration, validating the result and reviewing workflows and integrations before go-live. The exact approach depends on the source platform, destination modules and quality of the existing data.",
+  "gate": "Approved"
+ },
+ "F013": {
+  "page": "P03",
+  "prio": "P0",
+  "q": "Can I migrate to Zoho without losing my existing data?",
+  "a": "A well-planned migration can preserve supported and relevant business data, but no responsible provider should promise that every source-system object will transfer identically. Results depend on data quality, relationships, attachments, history, API limitations and destination modules. A migration audit, mapping plan, test migration and reconciliation should be completed before production cutover.",
+  "gate": "Approved"
+ },
+ "F014": {
+  "page": "P03",
+  "prio": "P0",
+  "q": "What does a Zoho CRM migration process involve?",
+  "a": "A robust migration includes discovery, data audit, cleanup, field mapping, relationship mapping, migration planning, test migration, validation, workflow and integration review, production migration, user acceptance testing and go-live support. The goal is not merely to move records; it is to ensure the destination system is usable and reconciled.",
+  "gate": "Approved"
+ },
+ "F015": {
+  "page": "P03",
+  "prio": "P0",
+  "q": "Can you clean and deduplicate our CRM data before migration?",
+  "a": "Yes, when included in scope. Data preparation can cover duplicate identification, field standardization, invalid values, incomplete records, ownership rules, relationship checks and decisions about archived data. Cleanup rules should be approved before records are changed, and the source export should be retained as an audit copy.",
+  "gate": "Confirm data-cleaning scope"
+ },
+ "F016": {
+  "page": "P03",
+  "prio": "P1",
+  "q": "How do you test a Zoho migration before go-live?",
+  "a": "Testing should include a representative trial migration, record-count reconciliation, sample checks of critical fields and relationships, attachment verification, permissions, automation and integration testing, plus user acceptance testing. The team should document issues, correct mappings and obtain approval before the final production migration.",
+  "gate": "Approved"
+ },
+ "F017": {
+  "page": "P04",
+  "prio": "P0",
+  "q": "Can Zoho integrate with my existing business software?",
+  "a": "Yes. Zoho can connect with many business systems through native integrations, Zoho Flow, Zapier, Make, APIs, webhooks or custom development. The right method depends on data ownership, synchronization frequency, volume, authentication, error handling and the business rules that should run when data changes.",
+  "gate": "Approved"
+ },
+ "F018": {
+  "page": "P04",
+  "prio": "P0",
+  "q": "Can you integrate Zoho with QuickBooks?",
+  "a": "Yes. A Zoho and QuickBooks integration can synchronize selected customers, products, invoices, payments or other records, depending on the business process. The design must define which system is the source of truth for each data type, how updates flow, how duplicates are prevented and how synchronization failures are handled.",
+  "gate": "Approved"
+ },
+ "F019": {
+  "page": "P04",
+  "prio": "P0",
+  "q": "Can you connect Zoho CRM with Shopify or WooCommerce?",
+  "a": "Yes. Ecommerce integrations can connect customer, order, product, inventory and related data with Zoho. The architecture should identify which system owns each data type, when synchronization occurs, how refunds or cancellations are handled and which automations should run after customer or order events.",
+  "gate": "Approved"
+ },
+ "F020": {
+  "page": "P04",
+  "prio": "P1",
+  "q": "Can you connect Zoho with custom APIs or databases?",
+  "a": "Yes. Custom APIs, webhooks or middleware can connect Zoho with external applications and databases when a suitable native connector is unavailable. The design should cover authentication, data mapping, synchronization, rate limits, security, logging, retry behavior, error alerts and responsibility for maintaining each endpoint.",
+  "gate": "Approved"
+ },
+ "F021": {
+  "page": "P04",
+  "prio": "P1",
+  "q": "Can you troubleshoot and maintain an existing Zoho integration?",
+  "a": "Yes, subject to an initial technical review. Troubleshooting can include checking authentication, API limits, field mappings, webhooks, schedules, logs, failed records and changes in connected applications. The review should identify the root cause, recovery steps, monitoring requirements and whether the existing integration should be repaired or redesigned.",
+  "gate": "Approved"
+ },
+ "F022": {
+  "page": "P05",
+  "prio": "P0",
+  "q": "Can Zoho automate my business processes?",
+  "a": "Yes. Zoho can automate repetitive work using workflows, assignment rules, approvals, schedules, custom functions, integrations and other automation tools. The best starting point is to document the manual process, rules, exceptions, owners and desired result before selecting the implementation method.",
+  "gate": "Approved"
+ },
+ "F023": {
+  "page": "P05",
+  "prio": "P0",
+  "q": "Can you build custom Zoho automations and Deluge functions?",
+  "a": "Yes. Deluge functions can implement business-specific logic when standard automation is insufficient. Common uses include calculations, cross-module updates, scheduled processes, API calls, synchronization, notifications, approvals and operational workflows. Custom code should include error handling, testing and documentation appropriate to its business importance.",
+  "gate": "Approved"
+ },
+ "F024": {
+  "page": "P05",
+  "prio": "P0",
+  "q": "When should I use standard Zoho features instead of custom development?",
+  "a": "Use standard Zoho features when they meet the requirement clearly and remain maintainable. Custom Deluge, APIs or Creator are appropriate when the process requires logic, integrations, calculations, interfaces or workflows that standard configuration cannot handle well. The choice should consider reliability, upgrade impact, support and total maintenance effort.",
+  "gate": "Approved"
+ },
+ "F025": {
+  "page": "P05",
+  "prio": "P1",
+  "q": "How do you test and document Zoho automations?",
+  "a": "Automation testing should cover normal cases, exceptions, permissions, duplicate triggers, API failures and the effect on related records. Documentation can include the business rule, trigger, conditions, actions, dependencies, owner, error behavior and recovery steps. Business-critical automation should also have monitoring and a controlled change process.",
+  "gate": "Approved"
+ },
+ "F026": {
+  "page": "P06",
+  "prio": "P0",
+  "q": "Can you audit or fix a poorly implemented Zoho CRM?",
+  "a": "Yes. A Zoho audit can review modules, fields, layouts, workflows, automation, permissions, integrations, data quality, reports and process design. The outcome should document what to repair, simplify, redesign or rebuild, along with priorities and risks. Changes to the live system should begin only after the current state is understood.",
+  "gate": "Approved"
+ },
+ "F027": {
+  "page": "P06",
+  "prio": "P1",
+  "q": "Can you take over a Zoho project from another consultant?",
+  "a": "Yes, subject to an initial audit and access review. A takeover should examine configuration, documentation, data, custom code, automations, integrations, permissions, outstanding requirements and known issues. The next step should be a prioritized recovery plan rather than making immediate untracked changes to the live system.",
+  "gate": "Approved"
+ },
+ "F028": {
+  "page": "P06",
+  "prio": "P1",
+  "q": "What will I receive from a Zoho CRM audit?",
+  "a": "The deliverables should be defined in the scope and can include a current-state assessment, issue register, data-quality findings, automation and integration review, permission risks, quick wins, recommended architecture and a prioritized remediation roadmap. Estimates for repair work should be separated from the audit findings where practical.",
+  "gate": "Confirm audit deliverables"
+ },
+ "F029": {
+  "page": "P07",
+  "prio": "P1",
+  "q": "When should I use Zoho Creator instead of Zoho CRM?",
+  "a": "Zoho CRM is generally best for CRM-centered processes, while Creator is useful when the business needs a specialized data model, workflow or user experience that does not fit a standard application. The decision should consider users, permissions, integrations, reporting, mobile requirements and the long-term application architecture.",
+  "gate": "Approved"
+ },
+ "F030": {
+  "page": "P07",
+  "prio": "P1",
+  "q": "Can you build custom business applications with Zoho Creator?",
+  "a": "Yes. Zoho Creator can be used to build custom applications with tailored data structures, interfaces, workflows, permissions, reports, integrations and business logic. The project should begin with process and data modelling so the application remains usable and maintainable as requirements grow.",
+  "gate": "Approved"
+ },
+ "F031": {
+  "page": "P07",
+  "prio": "P1",
+  "q": "Can Zoho Creator integrate with Zoho CRM and other systems?",
+  "a": "Yes. Creator can exchange data with Zoho applications and external systems through supported connectors, APIs, webhooks, Zoho Flow or custom functions. The architecture should define ownership of each data type, synchronization rules, permissions, error handling and reporting requirements.",
+  "gate": "Approved"
+ },
+ "F032": {
+  "page": "P08",
+  "prio": "P1",
+  "q": "Can you build custom dashboards and reports with Zoho Analytics?",
+  "a": "Yes. Zoho Analytics can be used to create dashboards, reports, KPI views and analytical models based on business requirements. The work should begin with the decisions users need to make, metric definitions, data sources, refresh expectations and access rules rather than starting with chart selection.",
+  "gate": "Approved"
+ },
+ "F033": {
+  "page": "P08",
+  "prio": "P1",
+  "q": "Can Zoho Analytics combine data from multiple systems?",
+  "a": "Yes, depending on the available connectors and integration approach. A multi-source analytics solution should define the source of truth, keys used to join data, refresh schedule, transformations, data-quality checks, security and the meaning of each KPI.",
+  "gate": "Approved"
+ },
+ "F034": {
+  "page": "P08",
+  "prio": "P1",
+  "q": "How do you decide which KPIs should appear on a Zoho dashboard?",
+  "a": "KPIs should be tied to a business objective, decision owner, clear definition, reliable data source, time period and target where appropriate. A useful dashboard emphasizes a small set of actionable measures and provides drill-down detail instead of displaying every available metric.",
+  "gate": "Approved"
+ },
+ "F035": {
+  "page": "P09",
+  "prio": "P1",
+  "q": "Should my business use Zoho One or individual Zoho apps?",
+  "a": "Zoho One can make sense when several departments need connected applications, while individual apps may be more suitable for narrower requirements. The right choice depends on users, processes, integrations, budget, administration and future growth. A needs assessment helps avoid implementing applications that do not solve a real business problem.",
+  "gate": "Approved"
+ },
+ "F036": {
+  "page": "P09",
+  "prio": "P1",
+  "q": "Which Zoho apps does my business actually need?",
+  "a": "There is no universal Zoho stack. The right combination depends on sales, accounting, inventory, support, marketing, analytics, ecommerce and custom-application requirements. Each application should have a defined purpose, owner, data flow and adoption plan before it is added to the architecture.",
+  "gate": "Approved"
+ },
+ "F037": {
+  "page": "P09",
+  "prio": "P1",
+  "q": "Can Zoho One be implemented in phases?",
+  "a": "Yes. A phased rollout can reduce disruption and allow the team to validate processes before adding more applications. Prioritization should consider business value, dependencies, data readiness, user capacity and integration requirements. Each phase should include testing, training, ownership and measurable acceptance criteria.",
+  "gate": "Approved"
+ },
+ "F038": {
+  "page": "P10",
+  "prio": "P1",
+  "q": "Can I integrate ChatGPT or other AI tools with Zoho CRM?",
+  "a": "Yes. Zoho workflows and business data can connect to external AI services when the use case and data-handling requirements are appropriate. Potential applications include summarization, classification, lead or ticket assistance, information extraction, content drafting and workflow support. The design should address permissions, privacy, API limits, logging and human review.",
+  "gate": "Approved"
+ },
+ "F039": {
+  "page": "P10",
+  "prio": "P1",
+  "q": "What business processes can AI automate with Zoho?",
+  "a": "AI can assist with tasks such as summarizing customer interactions, classifying information, extracting structured data, drafting responses, prioritizing work and triggering approved workflows. The best use cases have clear inputs, measurable outcomes, suitable data and a defined human-review process for errors or sensitive decisions.",
+  "gate": "Approved"
+ },
+ "F040": {
+  "page": "P10",
+  "prio": "P1",
+  "q": "How do you protect business data when connecting AI tools to Zoho?",
+  "a": "The design should minimize the data sent, restrict access, use approved accounts and credentials, document retention settings, review vendor terms, log important actions and keep human approval for sensitive outcomes. Exact safeguards depend on the Zoho application, AI provider, data type and applicable legal or contractual requirements.",
+  "gate": "Legal/privacy review required"
+ }
+}

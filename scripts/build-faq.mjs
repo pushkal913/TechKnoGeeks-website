@@ -1,36 +1,68 @@
 import fs from 'fs';
 
-// Adds a visible, accessible FAQ section + a connected JSON-LD @graph (WebPage +
-// Service + Organization + FAQPage) to a page. Data-driven — add pages to PAGES.
-// Only "Approved" FAQs are included; gated ones stay commented in the workbook until
-// the owner confirms. Schema answer text is IDENTICAL to the visible answer.
+// Adds a visible, accessible FAQ section + a connected JSON-LD @graph to each page.
+// Interim plan (Option B): approved FAQs placed on existing pages, no duplicates.
+// FAQ text is loaded from faq-data.json (extracted from the owner's workbook);
+// homepage FAQs are broad brand-level Q&As. Schema answer text === visible answer.
 const GEN = 'src/generated';
 const ORG = 'https://www.techknogeeks.com/#organization';
 const SITE = 'https://www.techknogeeks.com';
+const FAQ = JSON.parse(fs.readFileSync('scripts/faq-data.json', 'utf8'));
+const byId = (ids) => ids.map(id => ({ q: FAQ[id].q, a: FAQ[id].a }));
 
 const PAGES = {
   services: {
-    url: SITE + '/services',
-    webName: 'Zoho Implementation, Automation & Support Services',
+    url: SITE + '/services', webName: 'Zoho Implementation, Automation & Support Services',
     webDesc: 'End-to-end Zoho implementation and automation services — CRM, Books, Creator, Analytics and cross-platform integrations tailored to your workflows.',
-    service: {
-      name: 'Zoho consulting and implementation services',
-      serviceType: 'Zoho consulting, implementation, automation and integration services',
+    service: { name: 'Zoho consulting and implementation services', serviceType: 'Zoho consulting, implementation, automation and integration services',
       description: 'Consulting, implementation, migration, customization, integrations, analytics, custom applications, accounting, telephony and AI solutions across the Zoho ecosystem.',
-      audience: 'Businesses evaluating or using Zoho',
-      areaServed: 'Worldwide',
-    },
+      audience: 'Businesses evaluating or using Zoho', areaServed: 'Worldwide' },
+    faqs: byId(['F001', 'F002', 'F003', 'F004']),
+  },
+  'crm-database': {
+    url: SITE + '/crm-database', webName: 'Zoho CRM & Custom Database Solutions',
+    webDesc: 'Custom Zoho CRM setup and database solutions — clean data, smart automation and integrations that give your team one source of truth.',
+    service: { name: 'Zoho CRM and Database Solutions', serviceType: 'Zoho CRM consulting, implementation, migration and automation',
+      description: 'Zoho CRM setup, customization, custom modules, data migration and workflow automation, together with custom database solutions built around your business process.',
+      audience: 'Businesses implementing or improving Zoho CRM', areaServed: 'Worldwide' },
+    faqs: byId(['F005', 'F006', 'F007', 'F008', 'F009', 'F012', 'F013', 'F022', 'F023']),
+  },
+  'data-driven-decisions-seamless-integrations': {
+    url: SITE + '/data-driven-decisions-seamless-integrations', webName: 'Zoho Analytics & Data Integration',
+    webDesc: 'Zoho Analytics and Power BI dashboards plus seamless integrations that turn scattered data into clear decisions.',
+    service: { name: 'Zoho Analytics and Integration Services', serviceType: 'Zoho Analytics, dashboards and system integrations',
+      description: 'Zoho Analytics dashboards and reporting, plus integrations connecting Zoho with accounting, ecommerce, communications, APIs and databases.',
+      audience: 'Businesses needing analytics and integrations in Zoho', areaServed: 'Worldwide' },
+    faqs: byId(['F017', 'F018', 'F019', 'F020', 'F021', 'F032', 'F033', 'F034']),
+  },
+  'web-app-development': {
+    url: SITE + '/web-app-development', webName: 'Zoho Creator & Custom Web App Development',
+    webDesc: 'Custom web portals and mobile apps built on Zoho Creator and wired into your business logic. Turn manual processes into software.',
+    service: { name: 'Zoho Creator and Web App Development', serviceType: 'Custom Zoho Creator applications and web development',
+      description: 'Design and development of custom Zoho Creator applications, portals, workflows, interfaces and integrations based on your business requirements.',
+      audience: 'Businesses needing custom applications on Zoho', areaServed: 'Worldwide' },
+    faqs: byId(['F029', 'F030', 'F031']),
+  },
+  'telephony-ai-solutions': {
+    url: SITE + '/telephony-ai-solutions', webName: 'Zoho Telephony & AI Automation',
+    webDesc: 'Connect Twilio and RingCentral to Zoho and add AI chatbots and voice automation for smarter communication and fewer manual tasks.',
+    service: { name: 'Zoho Telephony and AI Automation', serviceType: 'Zoho telephony, Twilio/RingCentral and AI integrations',
+      description: 'Twilio and RingCentral telephony connected to Zoho, plus AI chatbots and AI-assisted workflows implemented with appropriate permissions and review.',
+      audience: 'Businesses adding telephony and AI to Zoho', areaServed: 'Worldwide' },
+    faqs: byId(['F038', 'F039']),
+  },
+  index: {
+    url: SITE + '/', homepage: true, webName: 'TechKnoGeeks — Zoho Integrations & Automation',
+    webDesc: 'TechKnoGeeks helps businesses integrate, automate and scale with the complete Zoho Suite — CRM, Books, Creator, Analytics and cross-platform integrations.',
     faqs: [
-      { q: 'What Zoho services does TechKnoGeeks provide?',
-        a: 'TechKnoGeeks provides Zoho consulting, implementation, customization, migration, automation, integration, analytics, custom application, accounting, telephony and AI-related services. The team works across products such as Zoho CRM, Zoho One, Creator, Analytics, Books, Inventory, Desk, Campaigns and Flow, together with external platforms and APIs. The final solution should be based on the business process rather than a fixed software bundle.' },
-      { q: 'What information do you need to scope a Zoho project?',
-        a: 'A useful project brief includes the business processes involved, number and types of users, current applications, required Zoho products, data to migrate, integrations, reports, automations, permissions, training needs and target timeline. If these details are not yet documented, discovery can be used to map the requirements before preparing a detailed scope and estimate.' },
+      { q: 'What does TechKnoGeeks do?', a: 'TechKnoGeeks is a Zoho consulting and implementation partner. We help businesses integrate, automate and scale using the Zoho ecosystem — CRM, Books, Creator, Analytics and more — along with cross-platform integrations. The focus is on designing the right solution around your business process rather than selling a fixed software bundle.' },
+      { q: 'Which Zoho products and tools do you work with?', a: 'We work across the Zoho suite, including Zoho CRM, Zoho One, Creator, Analytics, Books, Inventory, Desk, Campaigns and Flow, and connect them with external platforms such as Twilio, RingCentral, Power BI, QuickBooks, Shopify and custom APIs. The exact stack depends on what your business actually needs.' },
+      { q: 'How do we get started with TechKnoGeeks?', a: 'The best starting point is a short discovery conversation about your business processes, current tools and goals. From there we map requirements, recommend the right Zoho setup and prepare a clear scope and estimate. You can book a free consultation to begin.' },
     ],
   },
 };
 
 const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
 const STYLE = `<style>
 .tkg-faq{background:#f5f8fc;padding:60px 20px;font-family:"Merriweather",Georgia,serif}
 .tkg-faq *{box-sizing:border-box}
@@ -58,50 +90,51 @@ function faqSection(cfg) {
   return `<!--tkg-faq-start-->${STYLE}<section class="tkg-faq" aria-labelledby="tkg-faq-h"><div class="tkg-faq-wrap"><h2 id="tkg-faq-h">Frequently Asked Questions</h2><div class="tkg-faq-list">${items}</div><p class="tkg-faq-cta">Still have a question? <a href="/contact">Book a free consultation &rarr;</a></p></div></section><!--tkg-faq-end-->`;
 }
 
+function orgNode(enriched) {
+  const o = { '@type': 'Organization', '@id': ORG, name: 'TechKnoGeeks', url: SITE,
+    logo: SITE + '/no%20background%20logo%20-1-.png',
+    sameAs: ['https://www.linkedin.com/company/techknogeeks', 'https://wa.me/919878191721'] };
+  if (enriched) {
+    o.description = 'TechKnoGeeks is a Zoho consulting and implementation partner helping businesses integrate, automate and scale with the Zoho ecosystem and cross-platform integrations.';
+    o.areaServed = 'Worldwide';
+    o.knowsAbout = ['Zoho CRM', 'Zoho Books', 'Zoho Creator', 'Zoho Analytics', 'Zoho One', 'Business process automation', 'System integration'];
+  }
+  return o;
+}
+
 function graph(cfg) {
-  const g = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      { '@type': 'Organization', '@id': ORG, name: 'TechKnoGeeks', url: SITE,
-        logo: SITE + '/no%20background%20logo%20-1-.png',
-        sameAs: ['https://www.linkedin.com/company/techknogeeks', 'https://wa.me/919878191721'] },
-      { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE, name: 'TechKnoGeeks',
-        publisher: { '@id': ORG } },
-      { '@type': 'WebPage', '@id': cfg.url + '#webpage', url: cfg.url, name: cfg.webName,
-        description: cfg.webDesc, isPartOf: { '@id': SITE + '/#website' },
-        mainEntity: { '@id': cfg.url + '#service' }, hasPart: { '@id': cfg.url + '#faq' } },
-      { '@type': 'Service', '@id': cfg.url + '#service', name: cfg.service.name,
-        serviceType: cfg.service.serviceType, description: cfg.service.description, url: cfg.url,
-        provider: { '@id': ORG },
-        audience: { '@type': 'Audience', audienceType: cfg.service.audience },
-        areaServed: cfg.service.areaServed },
-      { '@type': 'FAQPage', '@id': cfg.url + '#faq',
-        mainEntity: cfg.faqs.map(f => ({ '@type': 'Question', name: f.q,
-          acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
-    ],
-  };
+  const g = { '@context': 'https://schema.org', '@graph': [
+    orgNode(cfg.homepage),
+    { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE, name: 'TechKnoGeeks', publisher: { '@id': ORG } },
+  ] };
+  const webpage = { '@type': 'WebPage', '@id': cfg.url + '#webpage', url: cfg.url, name: cfg.webName,
+    description: cfg.webDesc, isPartOf: { '@id': SITE + '/#website' }, hasPart: { '@id': cfg.url + '#faq' } };
+  if (cfg.service) webpage.mainEntity = { '@id': cfg.url + '#service' };
+  g['@graph'].push(webpage);
+  if (cfg.service) g['@graph'].push({ '@type': 'Service', '@id': cfg.url + '#service', name: cfg.service.name,
+    serviceType: cfg.service.serviceType, description: cfg.service.description, url: cfg.url, provider: { '@id': ORG },
+    audience: { '@type': 'Audience', audienceType: cfg.service.audience }, areaServed: cfg.service.areaServed });
+  g['@graph'].push({ '@type': 'FAQPage', '@id': cfg.url + '#faq',
+    mainEntity: cfg.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
   return '<script type="application/ld+json">' + JSON.stringify(g) + '</script>';
 }
 
+let total = 0;
 for (const [slug, cfg] of Object.entries(PAGES)) {
-  // content: inject/replace the FAQ section (marker-wrapped, before the footer)
   const cPath = `${GEN}/${slug}.content.html`;
   let c = fs.readFileSync(cPath, 'utf8');
   const section = faqSection(cfg);
-  if (c.includes('<!--tkg-faq-start-->')) c = c.replace(/<!--tkg-faq-start-->[\s\S]*?<!--tkg-faq-end-->/, section);
-  else c = c + section;
+  c = c.includes('<!--tkg-faq-start-->') ? c.replace(/<!--tkg-faq-start-->[\s\S]*?<!--tkg-faq-end-->/, section) : c + section;
   fs.writeFileSync(cPath, c, 'utf8');
 
-  // head: replace the old Zoho JSON-LD with our connected graph (one consistent Organization)
   const hPath = `${GEN}/${slug}.head.html`;
   let h = fs.readFileSync(hPath, 'utf8');
-  const gscript = graph(cfg);
-  if (/<script type="application\/ld\+json" id="schemagenerator">[\s\S]*?<\/script>/.test(h))
-    h = h.replace(/<script type="application\/ld\+json" id="schemagenerator">[\s\S]*?<\/script>/, gscript);
-  else if (/<script type="application\/ld\+json">[\s\S]*?<\/script>/.test(h))
-    h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, gscript);
-  else h = h + gscript;
+  const gs = graph(cfg);
+  if (/<script type="application\/ld\+json" id="schemagenerator">[\s\S]*?<\/script>/.test(h)) h = h.replace(/<script type="application\/ld\+json" id="schemagenerator">[\s\S]*?<\/script>/, gs);
+  else if (/<script type="application\/ld\+json">[\s\S]*?<\/script>/.test(h)) h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, gs);
+  else h = h + gs;
   fs.writeFileSync(hPath, h, 'utf8');
-
-  console.log(`${slug}: ${cfg.faqs.length} FAQ(s) + connected @graph (WebPage→Service→Org, hasPart→FAQPage)`);
+  total += cfg.faqs.length;
+  console.log(slug.padEnd(46) + cfg.faqs.length + ' FAQ' + (cfg.service ? ' + Service' : ' (homepage)'));
 }
+console.log('\nTotal FAQs placed: ' + total);
