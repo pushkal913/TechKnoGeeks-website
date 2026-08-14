@@ -144,11 +144,7 @@
 /* Wider header container site-wide (reduce outer whitespace, spread logo/menu) */
 .theme-header .zpcontainer{max-inline-size:1680px!important;max-width:1680px!important}
 
-/* Show the 'Our Expertise at a Glance' carousel section on mobile/tablet too */
-
-/* Mobile: uniform carousel logo sizing in 'Our Expertise at a Glance' */
-@media (max-width: 767px){
-    max-height:60px!important;max-width:70%!important;width:auto!important;height:auto!important;
-    object-fit:contain!important;margin-left:auto!important;margin-right:auto!important;display:block!important;
-  }
+/* Tighten the empty whitespace below the "Our Achievements" trust bar on desktop (~35% less). */
+@media(min-width:992px){
+  [data-element-id="elm_MTSUCcPzTS-XyUu0kHtA1w"].zpsection{padding-block-end:64px!important;padding-bottom:64px!important}
 }
