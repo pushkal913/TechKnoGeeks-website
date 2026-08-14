@@ -87,7 +87,7 @@ function faqSection(cfg) {
   const items = cfg.faqs.map(f =>
     `<details class="tkg-faq-item"><summary><span>${escHtml(f.q)}</span><span class="ic" aria-hidden="true">+</span></summary><div class="tkg-faq-a"><p>${escHtml(f.a)}</p></div></details>`
   ).join('');
-  return `<!--tkg-faq-start-->${STYLE}<section class="tkg-faq" aria-labelledby="tkg-faq-h"><div class="tkg-faq-wrap"><h2 id="tkg-faq-h">Frequently Asked Questions</h2><div class="tkg-faq-list">${items}</div><p class="tkg-faq-cta">Still have a question? <a href="/contact">Book a free consultation &rarr;</a></p></div></section><!--tkg-faq-end-->`;
+  return `<!--tkg-faq-start-->${STYLE}<section class="tkg-faq" aria-labelledby="tkg-faq-h"><div class="tkg-faq-wrap"><h2 id="tkg-faq-h">Frequently Asked Questions</h2><div class="tkg-faq-list">${items}</div><p class="tkg-faq-cta">Still have a question? <a href="https://techknogeeks.zohobookings.in/433051000000032055" target="_blank" rel="noopener">Book a free consultation &rarr;</a></p></div></section><!--tkg-faq-end-->`;
 }
 
 function orgNode(enriched) {
