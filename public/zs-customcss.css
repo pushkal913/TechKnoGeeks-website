@@ -148,3 +148,12 @@
 @media(min-width:992px){
   [data-element-id="elm_MTSUCcPzTS-XyUu0kHtA1w"].zpsection{padding-block-end:64px!important;padding-bottom:64px!important}
 }
+
+/* Homepage hero: softly feather the top & bottom edges into the page background
+   so the banner blends in instead of sitting as a hard-edged block. */
+[data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"]{position:relative}
+[data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"]::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:3;
+  background:linear-gradient(to bottom,#ffffff 0%,rgba(255,255,255,0) 14%,rgba(255,255,255,0) 86%,#ffffff 100%);
+}
+[data-element-id="elm_jo3y8wrAoXcPxttxzrwtiA"] .zphero-slider-container{position:relative;z-index:4}
