@@ -38,9 +38,8 @@ const STYLE = `<style>
 @media(max-width:680px){
   .tkg-tabs{padding:0 14px;margin-top:42px;margin-bottom:40px}
   .tkg-tabs h3{font-size:1.62rem}
-  .tkg-tablist{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .tkg-tablist::-webkit-scrollbar{display:none}
-  .tkg-tab{font-size:.86rem;padding:9px 15px}
+  .tkg-tablist{flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}
+  .tkg-tab{font-size:.82rem;padding:8px 13px}
   .tkg-chips{gap:9px}
   .tkg-chip{font-size:.86rem;padding:10px 14px}
 }

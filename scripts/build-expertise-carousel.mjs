@@ -50,7 +50,7 @@ const STYLE = `<style>
   .tkg-card h4{font-size:1.04rem}
   .tkg-card p.full{display:none}.tkg-card p.short{display:block;font-size:.92rem}
   .tkg-arrow{width:38px;height:38px}
-  .tkg-prev{left:-2px}.tkg-next{right:-2px}
+  .tkg-prev{left:2px}.tkg-next{right:2px}
 }
 </style>`;
 
