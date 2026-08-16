@@ -19,6 +19,13 @@
   status = 301
   force = true
 
+# Retire the stale Zoho sitemap: send any lingering references to the current one.
+[[redirects]]
+  from = "/sitemap-cms.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
 # Serve extensionless clean URLs (e.g. /about-us -> /about-us.html).
 # Netlify does this automatically for "file" build output, but keep pretty URLs tidy.
 [[redirects]]
